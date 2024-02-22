@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 다른묶음에서 호출했기 때문에 호출 불가능 그러나 오류(f12로 항상 검사)
+	document.write("전~~~~");
+	// msg1(); 오류
+</script>
+<script type="text/javascript">
+	// 호이스팅 : 선언한 내용을 맨 처음으로 올리는 특징
+	msg1();
+	function msg1() {
+		document.write("<p>hi~~~</p>");
+	}
+
+	function msg1() {
+		document.write("<p>hello~~~</p>");
+	}
+	
+	
+</script>
+<script type="text/javascript">
+	msg1();	
+	// msg2(); 오류 (호이스팅 안됨)
+	let msg2 = function() { // 익명은 호이스팅이 없다. 내려오면서 해석하는 놈
+		document.write("<p>hi 222~~~</p>");
+	};
+	msg2();
+</script>
+<script type="text/javascript">
+	function msg3(){
+		document.write("<p>1111~~~</p>");
+	}
+	// var 는 상관없지만 , let는 오류발생
+	// let msg3 = function(){
+	//	document.write("<p>22222~~~</p>");
+	// }
+	msg3();
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	msg1();
+</script>
+</body>
+</html>
