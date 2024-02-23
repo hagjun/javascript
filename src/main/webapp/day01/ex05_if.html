@@ -28,12 +28,12 @@
 	// prompth로 받은 숫자 k1이 홀수인지, 짝수인지 판별하자.
 	let k1 = prompt("정수입력");
 	let res = '';
-	if(k1 % 2 == 0){
-		res = '짝수';	
-	}else{
+	if(k1%2==0){
+		res = '짝수';
+	}else {
 		res = '홀수';
 	}
-	document.write(`<h2>res = ${res}</h2>`);
+	document.write(`<h2>res=${res}</h2>`);
 	
 	// 연봉인상이 100보다 작다면 “회사를 바로 그만두고 이직 준비한다.” 
 	let pay = 200;
