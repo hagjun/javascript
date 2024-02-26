@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>라이트박스 : 이미지 클릭시 확대 나옴</title>
+    <link rel="stylesheet" href="../css/ex06_lightbox.css">
+  </head>
+  <body>
+    <div class="row">
+      <ul>    <!-- src 누르면 data-src로 넣겠다. -->
+        <li><img src="../images/tree-1-thumb.jpg" data-src="../images/tree-1.jpg" class="pic"></li>
+        <li><img src="../images/tree-2-thumb.jpg" data-src="../images/tree-2.jpg" class="pic"></li>
+        <li><img src="../images/tree-3-thumb.jpg" data-src="../images/tree-3.jpg" class="pic"></li> 
+        <li><img src="../images/tree-4-thumb.jpg" data-src="../images/tree-4.jpg" class="pic"></li>
+        <li><img src="../images/tree-5-thumb.jpg" data-src="../images/tree-5.jpg" class="pic"></li>
+        <li><img src="../images/tree-6-thumb.jpg" data-src="../images/tree-6.jpg" class="pic"></li>
+      </ul>
+    </div>
+    <div id="lightbox" onclick='img_close()'>
+            <img src="../images/tree-1.jpg" alt="" id="lightboxImage">
+    </div>
+    <script type="text/javascript">
+        let pics = document.querySelectorAll('.pic');
+        let lightbox = document.querySelector('#lightbox');
+        /* forin 문 하면 작동 안됨, forof 문 사용 */
+        for (let k of pics) {
+            k.addEventListener('click', showLightbox);
+        }
+        function showLightbox() {
+            let bigpic = this.getAttribute('data-src');
+            document.querySelector('#lightboxImage').setAttribute('src', bigpic);
+            lightbox.style.display= 'block';
+        }
+        function img_close(){
+            lightbox.style.display= 'none';
+        }
+        // 익명함수 사용
+//         lightbox.onclick = function() {
+//             lightbox.style.display= 'none';
+//         }
+    </script>
+  </body>
+</html>
