@@ -31,7 +31,7 @@ function getComment(postId, callback) {
 }
 
 
-/* 콜백지옥 ; 콜백함수 안에 콜백함수 계속 호출 */
+/* 콜백지옥 : 콜백함수 안에 콜백함수 계속 호출 */
 getUser(1,(user)=>{
 	console.log('user:', user);
 	getPosts(user.id, (posts)=>{

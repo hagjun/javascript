@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>실제 주소 갔다오기</title>
+</head>
+<body>
+<script type="text/javascript">
+	function fetchUser(){
+		const url = 'https://jsonplaceholder.typicode.com/users/1';
+		return fetch(url).then((response)=>{return response.json()});
+	}
+	function fetchTodo() {
+		const url = 'https://jsonplaceholder.typicode.com/todos/1';
+		return fetch(url).then((response)=>{return response.json()});	
+	}
+	
+	// 실행하는 함수
+	async function logTodoTitle() {
+		console.log("1");
+		const user = await fetchUser();
+		console.log("2");
+		if(user.id === 1){
+			const todo = await fetchTodo();
+			console.log(todo.title); // 하나만 찍으려면
+			console.log(todo);
+		}
+		console.log("3");
+	}
+	
+	console.log("start");
+	logTodoTitle();      
+	console.log("end"); /* 병행처리 */
+</script>
+</body>
+</html>

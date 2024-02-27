@@ -5,7 +5,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>DOM</title>
-<link rel="stylesheet" href="../css/ex05_attr.css">
+<link rel="stylesheet" href="../css/ex05_attr2.css">
 </head>
 <body>
 <!-- 
@@ -30,7 +30,7 @@
                     <li>배송비 : 3,000원<br>(50,000원 이상 구매시 무료)</li>
                     <li>적립금 : 180원(2%)</li>
                     <li>로스팅 : 2019.06.17</li>
-                    <button>장바구니 담기</button>
+                    <button >장바구니 담기</button>
                 </ul>                
                 <a href="#" id="view" onclick="show()">상세 설명 보기</a>                
             </div>
@@ -61,7 +61,9 @@
  	// 이미지 클릭시 
  	function show(){
  		document.querySelector("#detail").style.display='block';
+ 		
  	}
+ 	
  	// 모든 이미지
  	let smallPics = document.querySelectorAll(".small");
  	for ( var k in smallPics) {
@@ -72,6 +74,9 @@
 		let newPic = this.src;
 		document.querySelector("#cup").setAttribute("src", newPic);
  	}
+ 	
+ 	
+ 	
  </script>
 </body>
 </html>
